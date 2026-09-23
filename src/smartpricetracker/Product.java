@@ -1,8 +1,11 @@
 package smartpricetracker;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Product {
+public class Product implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     private int id;
     private String name;
@@ -31,20 +34,8 @@ public class Product {
         return id;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public double getPreviousPrice() {
-        return previousPrice;
-    }
-
     public double getCurrentPrice() {
         return currentPrice;
-    }
-
-    public double getTargetPrice() {
-        return targetPrice;
     }
 
     public void updatePrice(double currentPrice, double targetPrice) {
